@@ -18,11 +18,51 @@ global mean warming (the rightmost point on the trend curve) and the most recent
 </A>
 </center>
 
+<P>
+<H2>How I made this plot ...</H2>
+<UL>
+  <LI>I downloaded the most recent HadCRUT monthly mean global mean
+  temperature data set from <A
+  HREF="https://www.metoffice.gov.uk/hadobs/hadcrut5">http://www.metoffice.gov.uk/hadobs/hadcrut5</A> at the
+  Met Office
+  </LI>
+   <LI>I read the data into a data frame object in the R programming language</LI>
+  <LI>I calculated the time mean over 1850-1900 and subtracted it from
+  all the monthly values to make anomaly values</LI>
+  <LI>I plotted the anomaly values (the grey line)</LI>
+  <LI>I estimated a long-term trend (the red line) using LOESS (locallly
+  estimated scatterplot smoothing) regression with a span of 0.2</LI>
+</UL>
+The HadCRUT5 data were obtained from
+http://www.metoffice.gov.uk/hadobs/hadcrut5 and
+are © British Crown Copyright, Met Office,
+provided under an Open Government License.
+A description of how the dataset was made can be found here:
+Morice, C.P., J.J. Kennedy, N.A. Rayner, J.P. Winn, E. Hogan,
+   R.E. Killick, R.J.H. Dunn, T.J. Osborn, P.D. Jones and I.R. Simpson
+   <A
+   HREF="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JD032361">An
+   updated assessment of near-surface temperature change from 1850:
+   the HadCRUT5 dataset. </A> Journal of Geophysical Research
+(Atmospheres) doi:10.1029/2019JD032361
+<P>
+
+Note that estimates of global mean warming differ slightly depending
+on various choices such as:
+<UL>
+  <LI>which global temperature data set to use (there are <A HREF="https://climatedataguide.ucar.edu/climate-data/global-temperature-data-sets-overview-comparison-table">several</A>)</LI>
+   <LI>which period to use for the preindustrial mean e.g. 1850-1900</LI>
+  <LI>which statistical model to use for the trend process</LI>
+  <LI>what parameter values to use in the trend model</LI>
+</UL>
+
+
+
 
 <P>
 &copy D.B. Stephenson (2023). All rights reserved.
 
-If you would like to know more about the figure then please contact me by email on my
+If you'd like to know more about any of this then please contact me by email on my
 <a href="http://emps.exeter.ac.uk/mathematics/staff/dbs202">profile</A> page.
 
 
