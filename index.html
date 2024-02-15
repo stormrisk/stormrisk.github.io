@@ -10,7 +10,10 @@
 
 <P>
 The figure below shows monthly global mean temperatures (grey line) relative to the 1850-1900 pre-industrial mean together with a carefully constructed robust trend estimate (in red). The title gives the most recent estimate of
-global mean warming (the rightmost point on the trend curve) and the most recent mean warming rate (the rightmost slope of the trend curve):
+global mean warming (the rightmost point on the trend curve) and the
+most recent mean warming rate (the rightmost slope of the trend
+curve). The dashed blue lines show the 95% confidence intervals on the
+trend estimate:
 
 <center>
 <A HREF="globalwarming.png">
@@ -30,8 +33,14 @@ global mean warming (the rightmost point on the trend curve) and the most recent
   <LI>I calculated the time mean over 1850-1900 and subtracted it from
   all the monthly values to make anomaly values</LI>
   <LI>I plotted the anomaly values (the grey line)</LI>
-  <LI>I estimated a long-term trend (the red line) using LOESS (locallly
-  estimated scatterplot smoothing) regression with a span of 0.2</LI>
+  <LI>I estimated a long-term trend (the red line) by modelling the
+  anomaly values as the sum of a smooth function of year (the trend), a smooth
+  function of calendar month, and an irregular AR(2) noise term having
+  month-to-month persistence. This generalised additive model was proposed by myself and Simon Wood
+  and demonstrated in Box 2.2 (pages
+  179-180) of <A HREF="https://www.ipcc.ch/site/assets/uploads/2017/09/WG1AR5_Chapter02_FINAL.pdf">Chapter
+  2 of the IPCC 5th assessment report (2017)</A>.  
+  </LI>
 </UL>
 The HadCRUT5 data were obtained from
 http://www.metoffice.gov.uk/hadobs/hadcrut5 and
