@@ -1,0 +1,87 @@
+<html>
+<body>
+
+<head>
+<title>David Stephenson's Global Mean Warming status page</title>
+</head>
+
+       <H1> How close are we to 1.5 degrees global mean warming?</H1>
+
+
+<P>
+The figure below shows monthly global mean temperatures (grey line) relative to the 1850-1900 pre-industrial mean together with a carefully constructed robust trend estimate (in red). The title gives the most recent estimate of
+global mean warming (the rightmost point on the trend curve) and the
+most recent mean warming rate (the rightmost slope of the trend
+curve). The dashed blue lines show the 95% confidence intervals on the
+trend estimate:
+
+<center>
+<A HREF="globalwarming.png">
+<img src = "globalwarming.png" alt = "Global mean warming trend" width = 40% height = 50% />
+</A>
+</center>
+
+<P>
+<H2>How I made this plot ...</H2>
+<UL>
+  <LI>I downloaded the most recent HadCRUT monthly mean global mean
+  temperature data set from <A
+  HREF="https://www.metoffice.gov.uk/hadobs/hadcrut5">http://www.metoffice.gov.uk/hadobs/hadcrut5</A> at the
+  Met Office
+  </LI>
+   <LI>I read the data into a data frame object in the R programming language</LI>
+  <LI>I calculated the time mean over 1850-1900 and subtracted it from
+  all the monthly values to make anomaly values</LI>
+  <LI>I plotted the anomaly values (the grey line)</LI>
+  <LI>I estimated a long-term trend (the red line) and the 95%
+  confidence interval (the blue lines) by modelling the
+  anomaly values as the sum of a smooth function of year (the trend), a smooth
+  function of calendar month, and an irregular AR(2) noise term having
+  month-to-month persistence. This generalised additive model was proposed by myself and Simon Wood
+  and demonstrated in Box 2.2 (pages
+  179-180) of <A HREF="https://www.ipcc.ch/site/assets/uploads/2017/09/WG1AR5_Chapter02_FINAL.pdf">Chapter
+  2 of the IPCC 5th assessment report (2017)</A>.  
+  </LI>
+</UL>
+Download this file <A HREF="trend.csv">trend.csv</A> if you wish to have the trend estimate
+and confidence interval lower and upper values shown in the plot.  
+
+<P>
+The HadCRUT5 data were obtained from
+http://www.metoffice.gov.uk/hadobs/hadcrut5 and
+are © British Crown Copyright, Met Office,
+provided under an Open Government License.
+A description of how the dataset was made can be found here:
+Morice, C.P., J.J. Kennedy, N.A. Rayner, J.P. Winn, E. Hogan,
+   R.E. Killick, R.J.H. Dunn, T.J. Osborn, P.D. Jones and I.R. Simpson
+   <A
+   HREF="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JD032361">An
+   updated assessment of near-surface temperature change from 1850:
+   the HadCRUT5 dataset. </A> Journal of Geophysical Research
+(Atmospheres) doi:10.1029/2019JD032361
+<P>
+
+Note that estimates of global mean warming differ slightly depending
+on various choices such as:
+<UL>
+  <LI>which global temperature data set to use (there are <A HREF="https://climatedataguide.ucar.edu/climate-data/global-temperature-data-sets-overview-comparison-table">several</A>)</LI>
+   <LI>which period to use for the preindustrial mean e.g. 1850-1900</LI>
+  <LI>which statistical model to use for the trend process</LI>
+  <LI>what parameter values to use in the trend model</LI>
+</UL>
+These can give rise to differences of the order of 0.1C, which at the
+current rate of warming of 0.2C/decade is of order of 5 years in
+timing uncertainty. 
+
+
+
+<P>
+&copy D.B. Stephenson (2024). All rights reserved.
+
+If you'd like to know more about any of this then please contact me by email on my
+<a href="http://emps.exeter.ac.uk/mathematics/staff/dbs202">profile</A> page.
+
+
+</body>
+
+</html>
